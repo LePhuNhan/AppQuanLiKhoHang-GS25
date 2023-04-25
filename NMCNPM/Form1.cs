@@ -77,23 +77,10 @@ namespace NMCNPM
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Form2());
-        }
-        private Form currentFormChild;
-        private void OpenChildForm(Form childForm)
-        {
-            if (currentFormChild != null)
-            {
-                currentFormChild.Close();
-            }
-            currentFormChild = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panel1.Controls.Add(childForm);
-            panel1.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -71,7 +71,10 @@ namespace NMCNPM
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.ShowDialog();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
