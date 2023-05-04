@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NMCNPM_QLKHO.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,16 @@ namespace NMCNPM
 {
     public partial class Form1 : Form
     {
+        public static string displayname = "";
+        string LoadDisplayName(string userName, string passWord)
+        {
+            return AccountDAO.Instance.LoadAccountDisplayname(userName, passWord);
+        }
+        bool LoginAccountNVVP(string userName, string passWord)
+        {
+
+            return AccountDAO.Instance.LoginAccountNVVP(userName, passWord);
+        }
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +34,7 @@ namespace NMCNPM
         {
             if (textBox2.Text == "Tên quản lý")
             {
-                textBox2.Text = "";
+                textBox2.Text = "201209018";
                 textBox2.ForeColor = Color.FromArgb(0, 124, 255);
             }
         }
@@ -43,7 +54,7 @@ namespace NMCNPM
             {
                 textBox3.UseSystemPasswordChar = true;
                 button2.BackgroundImage = Properties.Resources.hidden;
-                textBox3.Text = "";
+                textBox3.Text = "vanphonggs25";
                 textBox3.ForeColor = Color.FromArgb(0, 124, 255);
             }
         }
@@ -77,10 +88,45 @@ namespace NMCNPM
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 f2 = new Form2();
-            f2.ShowDialog();
-            this.Close();
+            string userName = textBox2.Text;
+            string passWord = textBox3.Text;
+            if (textBox2.Text == "Tên tài khoản" || textBox3.Text == "Mật khẩu")
+            {
+                MessageBox.Show("Bạn chưa nhập tài khoản hoặc mật khẩu", "Warning");
+            }
+            else
+            {
+                if (LoginAccountNVVP(userName, passWord))
+                {
+                    displayname = LoadDisplayName(userName, passWord);
+                    textBox3.Clear();
+                    OpenChildForm(new Menu());
+
+                }
+                else
+                {
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    MessageBox.Show("Sai tên tài khoản hoặc mật khẩu, Mời bạn nhập lại!!!", "Warning");
+                }
+            }
+        }
+        private Form currentFormChild;
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close();
+            }
+            currentFormChild = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(childForm);
+            panel1.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
         }
     }
 }
