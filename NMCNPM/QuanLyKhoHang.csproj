@@ -231,7 +231,10 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\DatHangDAO.cs" />
     <Compile Include="DAO\DoanhThuDAO.cs" />
+    <Compile Include="DAO\HuyHangDAO.cs" />
+    <Compile Include="DAO\KhoDAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

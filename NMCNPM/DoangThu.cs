@@ -1,5 +1,5 @@
 ﻿using NMCNPM_QLKHO;
-using NMCNPM_QLKHO.DAO;
+using NMCNPM_QLDOANHTHU.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +14,8 @@ using app = Microsoft.Office.Interop.Excel.Application;
 using Bunifu.UI.WinForms.Helpers.Transitions;
 using COMExcel = Microsoft.Office.Interop.Excel;
 using System.Windows.Forms.DataVisualization.Charting;
+using NMCNPM_QLKHO.DAO;
+using System.Data.SqlClient;
 
 namespace NMCNPM
 {
@@ -24,6 +26,22 @@ namespace NMCNPM
         {
             InitializeComponent();
             loadListView();
+        }
+        public void loadDoanhThu(ListView ListView)
+        {
+            
+
+        }
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection("Data Source =.\\SQLEXPRESS; Initial Catalog = GS25(1); Integrated Security = True");
+            SqlDataAdapter ad = new SqlDataAdapter("select ngaythangSold, tongSold from DOANHTHU " +
+                "where DATEDIFF(day,ngaythangSold,getdate())<=7", conn);
+            System.Data.DataTable dt = new System.Data.DataTable();
+            ad.Fill(dt);
+            chart1.DataSource = dt;
+            chart1.Series["Series1"].XValueMember = "ngaythangSold";
+            chart1.Series["Series1"].YValueMembers = "tongSold";
         }
         void loadListView()
         {
@@ -58,39 +76,6 @@ namespace NMCNPM
                 textBox6.Text = test.ToString();
             }
         }
-    
-        
-       
-        private void Form3_Load(object sender, EventArgs e)
-        {
-            chart1.Series["Series1"].Points.Add(100);
-            chart1.Series["Series1"].Points[0].Color = Color.FromArgb(0, 124, 255);
-            chart1.Series["Series1"].Points[0].AxisLabel = "08/04";
-
-            chart1.Series["Series1"].Points.Add(200);
-            chart1.Series["Series1"].Points[1].Color = Color.FromArgb(0, 124, 255);
-            chart1.Series["Series1"].Points[1].AxisLabel = "09/04";
-
-            chart1.Series["Series1"].Points.Add(300);
-            chart1.Series["Series1"].Points[2].Color = Color.FromArgb(0, 124, 255);
-            chart1.Series["Series1"].Points[2].AxisLabel = "10/04";
-
-            chart1.Series["Series1"].Points.Add(400);
-            chart1.Series["Series1"].Points[3].Color = Color.FromArgb(0, 124, 255);
-            chart1.Series["Series1"].Points[3].AxisLabel = "11/04";
-
-            chart1.Series["Series1"].Points.Add(500);
-            chart1.Series["Series1"].Points[4].Color = Color.FromArgb(0, 124, 255);
-            chart1.Series["Series1"].Points[4].AxisLabel = "12/04";
-
-            chart1.Series["Series1"].Points.Add(600);
-            chart1.Series["Series1"].Points[5].Color = Color.FromArgb(0, 124, 255);
-            chart1.Series["Series1"].Points[5].AxisLabel = "13/04";
-
-            chart1.Series["Series1"].Points.Add(700);
-            chart1.Series["Series1"].Points[6].Color = Color.FromArgb(0, 124, 255);
-            chart1.Series["Series1"].Points[6].AxisLabel = "14/04";                            
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -110,30 +95,37 @@ namespace NMCNPM
             if (sorter == null)
             {
                 sorter = new ItemComparer(e.Column);
-                sorter.Order = SortOrder.Ascending;
+                sorter.Order = System.Windows.Forms.SortOrder.Ascending;
                 listView1.ListViewItemSorter = sorter;
             }
             // if clicked column is already the column that is being sorted
             if (e.Column == sorter.Column)
             {
                 // Reverse the current sort direction
-                if (sorter.Order == SortOrder.Ascending)
-                    sorter.Order = SortOrder.Descending;
+                if (sorter.Order == System.Windows.Forms.SortOrder.Ascending)
+                    sorter.Order = System.Windows.Forms.SortOrder.Descending;
                 else
-                    sorter.Order = SortOrder.Ascending;
+                    sorter.Order = System.Windows.Forms.SortOrder.Ascending;
             }
             else
             {
                 // Set the column number that is to be sorted; default to ascending.
                 sorter.Column = e.Column;
-                sorter.Order = SortOrder.Ascending;
+                sorter.Order = System.Windows.Forms.SortOrder.Ascending;
             }
             listView1.Sort();//hienthi
         }
         private void button1_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
-            DoanhThuDAO.Instance.loadSpecificList(listView1, textBox1.Text);
+            if (textBox1.Text != "")
+            {
+                DoanhThuDAO.Instance.loadSpecificList(listView1, textBox1.Text);
+            }
+            else
+            {
+                button3_Click(sender, e);
+            }
         }
         private void ExportToExcel(ListView lv,string sheetName, string title)
         {
@@ -298,17 +290,28 @@ namespace NMCNPM
                     wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
                     app.Quit();
                     MessageBox.Show("Exported Successfully.");
+                    
                 }
             }
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            System.Data.DataTable dataTable = DoanhThuDAO.Instance.exportList();
-            DateTime curr = DateTime.Now;
-            string sheetName = "Doanh Thu";
-            string title = "Danh sách Kho ngày " + curr.ToString("dd-MM-yyyy");
-            //ExportFile(dataTable, sheetNamme, title);
-            ExportToExcel(listView1, sheetName, title);
+            //lỗi-không hiện thông báo
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xuất file Excel không", "Cảnh báo", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                System.Data.DataTable dataTable = DoanhThuDAO.Instance.exportList();
+                DateTime curr = DateTime.Now;
+                string sheetName = "Doanh Thu";
+                string title = "Danh sách Doanh Thu ngày " + curr.ToString("dd-MM-yyyy");
+                //ExportFile(dataTable, sheetName, title);
+
+                ExportToExcel(listView1, sheetName, title);
+            }
+            else
+                return;
+            
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -318,7 +321,7 @@ namespace NMCNPM
                 textBox1.Text = listView1.FocusedItem.SubItems[0].Text.ToString();
                 string date = listView1.FocusedItem.SubItems[3].Text.ToString();
                 dateTimePicker1.Value = DateTime.Parse(date);
-                textBox2.Text=0.ToString();
+                textBox2.Text = 0.ToString();
                 textBox3.Text = 0.ToString();
                 textBox4.Text = 0.ToString();
                 textBox6.Text = 0.ToString();
@@ -331,5 +334,6 @@ namespace NMCNPM
                 textBox6.Text = listView1.FocusedItem.SubItems[10].Text.ToString();
             }
         }
+
     }
 }

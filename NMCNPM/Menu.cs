@@ -30,6 +30,7 @@ namespace NMCNPM
             button7.FlatStyle = FlatStyle.Flat;
             button7.FlatAppearance.BorderSize = 0;
             OpenChildForm(new DoangThu());
+            label2.Text = "label2";
         }
         bool check1 = false;
         private void button1_Click(object sender, EventArgs e)
@@ -71,10 +72,13 @@ namespace NMCNPM
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 f1 = new Form1();
-            f1.ShowDialog();
-            this.Close();
+            DialogResult option = MessageBox.Show("Bạn có chắc muốn thoát chương trình và đăng xuất không ?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (option == DialogResult.Yes)
+            {
+                currentFormChild.Close();
+                this.Close();
+
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -115,6 +119,11 @@ namespace NMCNPM
         {
             OpenChildForm(new HuyKho());
             label1.Text = "Hủy hàng";
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            label2.Text = Form1.displayname;
         }
     }
 }

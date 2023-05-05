@@ -126,7 +126,6 @@ namespace NMCNPM
             panel1.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-
         }
     }
 }
