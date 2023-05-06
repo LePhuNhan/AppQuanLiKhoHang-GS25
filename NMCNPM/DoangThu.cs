@@ -36,7 +36,7 @@ namespace NMCNPM
         {
             SqlConnection conn = new SqlConnection("Data Source =.\\SQLEXPRESS; Initial Catalog = GS25(1); Integrated Security = True");
             SqlDataAdapter ad = new SqlDataAdapter("select ngaythangSold, tongSold from DOANHTHU " +
-                "where DATEDIFF(day,ngaythangSold,getdate())<=6", conn);
+                "where DATEDIFF(day,ngaythangSold,getdate())<=7", conn);
             System.Data.DataTable dt = new System.Data.DataTable();
             ad.Fill(dt);
             chart1.DataSource = dt;
