@@ -91,6 +91,7 @@ namespace NMCNPM
             }
             else
             {
+                DialogResult result = MessageBox.Show("Vui lòng nhập mã sản phẩm muốn tìm", "Thông báo", MessageBoxButtons.OK);
                 button3_Click(sender, e);
             }
         }
@@ -108,7 +109,7 @@ namespace NMCNPM
 
                     ws.Name = sheetName;
                     app.Visible = false;
-                    Microsoft.Office.Interop.Excel.Range head = ws.get_Range("A1", "G1");
+                    Microsoft.Office.Interop.Excel.Range head = ws.get_Range("A1", "H1");
                     head.Interior.ColorIndex = 33;
                     head.MergeCells = true;
 
@@ -149,23 +150,29 @@ namespace NMCNPM
 
                     Microsoft.Office.Interop.Excel.Range cl5 = ws.get_Range("E3", "E3");
 
-                    cl5.Value2 = "Số lượng đã hủy";
+                    cl5.Value2 = "Số lượng đã đặt";
 
                     cl5.ColumnWidth = 20.0;
 
                     Microsoft.Office.Interop.Excel.Range cl6 = ws.get_Range("F3", "F3");
 
-                    cl6.Value2 = "Số lượng trong kho";
+                    cl6.Value2 = "Số lượng đã hủy";
 
                     cl6.ColumnWidth = 20.0;
 
                     Microsoft.Office.Interop.Excel.Range cl7 = ws.get_Range("G3", "G3");
 
-                    cl7.Value2 = "Số lượng còn lại";
+                    cl7.Value2 = "Số lượng trong kho";
 
                     cl7.ColumnWidth = 20.0;
 
-                    Microsoft.Office.Interop.Excel.Range rowHead = ws.get_Range("A3", "G3");
+                    Microsoft.Office.Interop.Excel.Range cl8 = ws.get_Range("H3", "H3");
+
+                    cl8.Value2 = "Số lượng còn lại";
+
+                    cl8.ColumnWidth = 20.0;
+
+                    Microsoft.Office.Interop.Excel.Range rowHead = ws.get_Range("A3", "H3");
 
                     rowHead.Font.Bold = true;
 
@@ -194,7 +201,7 @@ namespace NMCNPM
 
                     int rowEnd = rowStart + listView1.Items.Count - 1;
 
-                    int columnEnd = 7;
+                    int columnEnd = 8;
 
                     // Ô bắt đầu điền dữ liệu
 
@@ -234,6 +241,7 @@ namespace NMCNPM
             DialogResult result = MessageBox.Show("Bạn có chắc muốn xuất file Excel không", "Cảnh báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+                updateKHO();
                 System.Data.DataTable dataTable = KhoDAO.Instance.exportList();
                 if (dateTimePicker1.Value > DateTime.Now)
                 {
@@ -245,11 +253,24 @@ namespace NMCNPM
                 string title = "Danh sách Kho Hàng ngày " + curr.ToString("dd-MM-yyyy");
                 //ExportFile(dataTable, sheetName, title);
                 ExportToExcel(listView1, sheetName, title);
+                clearInput();
+                loadListView();
             }
             else
                 return;
             
         }
-
+        void updateKHO()
+        {
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+                KhoDAO.Instance.ThemSoLuongKho(int.Parse(listView1.Items[i].SubItems[4].Text.ToString()),int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
+                KhoDAO.Instance.XoaDatHang(int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
+                KhoDAO.Instance.GiamSoLuongKho(int.Parse(listView1.Items[i].SubItems[5].Text.ToString()), int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
+                KhoDAO.Instance.XoaHuyHang(int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
+                KhoDAO.Instance.UpdateSoLuongConLai();
+            }
+            
+        }
     }
 }

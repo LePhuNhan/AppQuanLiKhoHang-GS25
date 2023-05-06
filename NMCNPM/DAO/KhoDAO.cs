@@ -23,7 +23,7 @@ namespace NMCNPM_QLKHO.DAO
 
         public void loadList(ListView ListView)
         {
-            string query = "select kh.sanphamID,sp.sanphamName,sp.NCC,sanphamBan,sanphamHuy,sanphamKho,sanphamConLai" +
+            string query = "select kh.sanphamID,sp.sanphamName,sp.NCC,sanphamBan,sanphamDat,sanphamHuy,sanphamKho,sanphamConLai" +
                 " from dbo.KHO kh, dbo.SANPHAM sp " +
                 "where kh.sanphamID = sp.sanphamID; ";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
@@ -49,7 +49,7 @@ namespace NMCNPM_QLKHO.DAO
         {
             string query;
             DataTable data = new DataTable();
-            query = "select kh.sanphamID,sp.sanphamName,sp.NCC,sanphamBan,sanphamHuy," +
+            query = "select kh.sanphamID,sp.sanphamName,sp.NCC,sanphamBan,sanphamDat,sanphamHuy," +
                 "sanphamKho,sanphamConLai\r\n\tfrom dbo.KHO kh, dbo.SANPHAM sp\r\n\t" +
                 "where kh.sanphamID like '%' + @sanphamID + '%'"+
                 " and kh.sanphamID = sp.sanphamID;";
@@ -65,6 +65,63 @@ namespace NMCNPM_QLKHO.DAO
             }
 
         }
-        
+        public void ThemSoLuongKho(int soluongDat, int sanphamID)
+        {
+
+            string query = "update KHO set sanphamKho += CAST( @soluongDat AS bigint)" +
+                " " +
+                "where sanphamID = CAST( @sanphamID AS bigint)";
+            int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { soluongDat, sanphamID });
+            if (data == 0)
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi thêm kho hàng", "WARNING");
+            }
+        }
+        public void XoaDatHang(int sanphamID)
+        {
+
+            string query = "update KHO set sanphamDat =0" +
+                " " +
+                "where sanphamID = CAST( @sanphamID AS bigint)";
+            int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { sanphamID });
+            if (data == 0)
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi thêm kho hàng", "WARNING");
+            }
+        }
+        public void GiamSoLuongKho(int soluongDat, int sanphamID)
+        {
+
+            string query = "update KHO set sanphamKho -= CAST( @soluongDat AS bigint)" +
+                " " +
+                "where sanphamID = CAST( @sanphamID AS bigint)";
+            int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { soluongDat, sanphamID });
+            if (data == 0)
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi hủy kho hàng", "WARNING");
+            }
+        }
+        public void UpdateSoLuongConLai()
+        {
+
+            string query = "update KHO set sanphamConLai= sanphamKho";
+            int data = DataProvider.Instance.ExecuteNonQuery(query);
+            if (data == 0)
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật kho hàng", "WARNING");
+            }
+        }
+        public void XoaHuyHang(int sanphamID)
+        {
+
+            string query = "update KHO set sanphamHuy =0" +
+                " " +
+                "where sanphamID = CAST( @sanphamID AS bigint)";
+            int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { sanphamID });
+            if (data == 0)
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi thêm kho hàng", "WARNING");
+            }
+        }
     }
 }

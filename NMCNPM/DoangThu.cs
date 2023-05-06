@@ -36,12 +36,13 @@ namespace NMCNPM
         {
             SqlConnection conn = new SqlConnection("Data Source =.\\SQLEXPRESS; Initial Catalog = GS25(1); Integrated Security = True");
             SqlDataAdapter ad = new SqlDataAdapter("select ngaythangSold, tongSold from DOANHTHU " +
-                "where DATEDIFF(day,ngaythangSold,getdate())<=7", conn);
+                "where DATEDIFF(day,ngaythangSold,getdate())<=6", conn);
             System.Data.DataTable dt = new System.Data.DataTable();
             ad.Fill(dt);
             chart1.DataSource = dt;
             chart1.Series["Series1"].XValueMember = "ngaythangSold";
             chart1.Series["Series1"].YValueMembers = "tongSold";
+            
         }
         void loadListView()
         {
@@ -122,8 +123,10 @@ namespace NMCNPM
             {
                 DoanhThuDAO.Instance.loadSpecificList(listView1, textBox1.Text);
             }
+            
             else
             {
+                DialogResult result = MessageBox.Show("Vui lòng nhập mã hóa đơn muốn tìm", "Thông báo", MessageBoxButtons.OK);
                 button3_Click(sender, e);
             }
         }
@@ -335,5 +338,14 @@ namespace NMCNPM
             }
         }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            if (textBox1.Text == "")
+            {
+                string date = dateTimePicker1.Value.ToString();
+                DoanhThuDAO.Instance.loadDatetime(listView1, date);
+            }
+        }
     }
 }

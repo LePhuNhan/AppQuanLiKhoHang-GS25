@@ -30,6 +30,7 @@ namespace NMCNPM
         {
             listView1.Items.Clear();
             DatHangDAO.Instance.loadList(listView1);
+            DatHangDAO.Instance.loadListSanPham(listView2);
             string time = DateTime.Now.ToString();
             label4.Text=time;
         }
@@ -75,7 +76,6 @@ namespace NMCNPM
             {
                 textBox2.Text = listView1.FocusedItem.SubItems[0].Text.ToString();
                 textBox3.Text = listView1.FocusedItem.SubItems[1].Text.ToString();
-                textBox1.Text = listView1.FocusedItem.SubItems[2].Text.ToString();
                 //string date = listView1.FocusedItem.SubItems[3].Text.ToString();
                 //dateTimePicker1.Value = DateTime.Parse(date);
             }
@@ -89,6 +89,7 @@ namespace NMCNPM
             }
             else
             {
+                DialogResult result = MessageBox.Show("Vui lòng nhập mã sản phẩm muốn đặt", "Thông báo", MessageBoxButtons.OK);
                 button4_Click(sender, e);
             }
         }
@@ -100,6 +101,10 @@ namespace NMCNPM
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (textBox2.Text.Length <= 5)
+            {
+                DialogResult res = MessageBox.Show("Vui lòng điền đúng mã hàng muốn đặt", "Cảnh báo", MessageBoxButtons.OK);
+            }
             if (textBox1.Text == "")
             {
                 DialogResult result = MessageBox.Show("Vui lòng điền số lượng hàng muốn đặt", "Cảnh báo", MessageBoxButtons.OK);
@@ -108,15 +113,17 @@ namespace NMCNPM
             {
                 DatHangDAO.Instance.DatHang(int.Parse(textBox2.Text), int.Parse(textBox1.Text));
                 textBox1.Clear();
-            }
-            if (textBox2.Text.Length <= 5)
-            {
-                DialogResult res = MessageBox.Show("Vui lòng điền đúng mã hàng muốn đặt", "Cảnh báo", MessageBoxButtons.OK);
+                clearInput();
+                loadListView();
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (textBox2.Text.Length <= 5)
+            {
+                DialogResult res = MessageBox.Show("Vui lòng điền đúng mã hàng muốn đổi số lượng", "Cảnh báo", MessageBoxButtons.OK);
+            }
             if (textBox1.Text == "")
             {
                 DialogResult result = MessageBox.Show("Vui lòng điền số lượng hàng muốn đổi", "Cảnh báo", MessageBoxButtons.OK);
@@ -125,10 +132,8 @@ namespace NMCNPM
             {
                 DatHangDAO.Instance.ChinhSua(int.Parse(textBox1.Text), int.Parse(textBox2.Text));
                 textBox1.Clear();
-            }
-            if (textBox2.Text.Length <= 5)
-            {
-                DialogResult res = MessageBox.Show("Vui lòng điền đúng mã hàng muốn đổi số lượng", "Cảnh báo", MessageBoxButtons.OK);
+                clearInput();
+                loadListView();
             }
         }
         private void ExportToExcel(ListView lv, string sheetName, string title)
@@ -269,21 +274,59 @@ namespace NMCNPM
                 string title = "Danh sách Đặt Hàng ngày " + curr.ToString("dd-MM-yyyy");
                 //ExportFile(dataTable, sheetName, title);
                 ExportToExcel(listView1, sheetName, title);
-                button4_Click(sender, e);
+                clearInput();
+                loadListView();
             }
             else
                 return;
+            
         }
         void updateKHO()
         {
             for (int i = 0; i < listView1.Items.Count; i++)
             {
-                DatHangDAO.Instance.ThemSoLuongKho(int.Parse(listView1.Items[i].SubItems[2].Text.ToString()), int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
-                DatHangDAO.Instance.ThemSoLuongConLai(int.Parse(listView1.Items[i].SubItems[2].Text.ToString()), int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
+                DatHangDAO.Instance.ThemSoLuongDat(int.Parse(listView1.Items[i].SubItems[2].Text.ToString()), int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
                 DatHangDAO.Instance.XoaDatHang(int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
-
             }
         }
 
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView2.SelectedItems.Count > 0)
+            {
+                textBox2.Text = listView2.FocusedItem.SubItems[0].Text.ToString();
+                textBox3.Text = listView2.FocusedItem.SubItems[1].Text.ToString();
+                //string date = listView1.FocusedItem.SubItems[3].Text.ToString();
+                //dateTimePicker1.Value = DateTime.Parse(date);
+            }
+        }
+
+        private void listView2_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            ItemComparer sorter = listView1.ListViewItemSorter as ItemComparer;
+
+            if (sorter == null)
+            {
+                sorter = new ItemComparer(e.Column);
+                sorter.Order = SortOrder.Ascending;
+                listView1.ListViewItemSorter = sorter;
+            }
+            // if clicked column is already the column that is being sorted
+            if (e.Column == sorter.Column)
+            {
+                // Reverse the current sort direction
+                if (sorter.Order == SortOrder.Ascending)
+                    sorter.Order = SortOrder.Descending;
+                else
+                    sorter.Order = SortOrder.Ascending;
+            }
+            else
+            {
+                // Set the column number that is to be sorted; default to ascending.
+                sorter.Column = e.Column;
+                sorter.Order = SortOrder.Ascending;
+            }
+            listView2.Sort();//hienthi
+        }
     }
 }

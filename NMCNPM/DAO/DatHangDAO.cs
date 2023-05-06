@@ -39,6 +39,21 @@ namespace NMCNPM_QLDATHANG.DAO
             }
 
         }
+        public void loadListSanPham(System.Windows.Forms.ListView ListView)
+        {
+            string query = "select * from dbo.SANPHAM";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                ListViewItem item = new ListViewItem(row[0].ToString());
+                for (int i = 1; i < data.Columns.Count; i++)
+                {
+                    item.SubItems.Add(row[i].ToString());
+                }
+                ListView.Items.Add(item);
+            }
+
+        }
         public void loadSpecificList(System.Windows.Forms.TextBox text, string sreachValue)
         {
             string query;
@@ -60,22 +75,11 @@ namespace NMCNPM_QLDATHANG.DAO
             
             
         }
-        public void ThemSoLuongKho(int soluongDat, int sanphamID)
+
+        public void ThemSoLuongDat(int soluongDat, int sanphamID)
         {
 
-            string query = "update KHO set sanphamKho += CAST( @soluongDat AS bigint)" +
-                " " +
-                "where sanphamID = CAST( @sanphamID AS bigint)";
-            int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { soluongDat, sanphamID });
-            if(data==0)
-            {
-                MessageBox.Show("Đã xảy ra lỗi khi thêm kho hàng", "WARNING");
-            }
-        }
-        public void ThemSoLuongConLai(int soluongDat, int sanphamID)
-        {
-
-            string query = "update KHO set sanphamConLai += CAST( @soluongDat AS bigint)" +
+            string query = "update KHO set sanphamDat += CAST( @soluongDat AS bigint)" +
                 " " +
                 "where sanphamID = CAST( @sanphamID AS bigint)";
             int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { soluongDat, sanphamID });
@@ -84,6 +88,7 @@ namespace NMCNPM_QLDATHANG.DAO
                 MessageBox.Show("Đã xảy ra lỗi khi thêm kho hàng", "WARNING");
             }
         }
+        
         public void XoaDatHang(int sanphamID)
         {
             string query = "DELETE FROM DATHANG WHERE sanphamID = @sanphamID";
@@ -116,7 +121,7 @@ namespace NMCNPM_QLDATHANG.DAO
                 int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { sanphamID, soluongDat });
                 if (data > 0)
                 {
-                    MessageBox.Show("Thêm hàng thành công. Vui lòng ấn refresh để cập nhật Danh sách");
+                    MessageBox.Show("Thêm hàng thành công!");
 
                     return true;
                 }
@@ -135,7 +140,7 @@ namespace NMCNPM_QLDATHANG.DAO
             int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { soluongDat, sanphamID });
             if (data > 0)
             {
-                MessageBox.Show("Cập nhật số hàng muốn đặt thành công. Vui lòng ấn refresh để cập nhật Danh sách", "Thành công cập nhật số lượng hàng");
+                MessageBox.Show("Cập nhật số hàng muốn đặt thành công!", "Thành công cập nhật số lượng hàng");
             }
             else
             {
