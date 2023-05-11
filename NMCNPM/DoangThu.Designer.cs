@@ -88,7 +88,7 @@
             series1.Name = "Series1";
             series1.YValueMembers = "0";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1138, 369);
+            this.chart1.Size = new System.Drawing.Size(1117, 369);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,7 +130,7 @@
             this.listView1.Location = new System.Drawing.Point(27, 652);
             this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1138, 399);
+            this.listView1.Size = new System.Drawing.Size(1117, 399);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -345,7 +345,7 @@
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.button2.Image = global::NMCNPM.Properties.Resources.downloadfile;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(1045, 479);
+            this.button2.Location = new System.Drawing.Point(1024, 479);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 31);
@@ -401,7 +401,7 @@
             this.panel2.Location = new System.Drawing.Point(280, 431);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(679, 1);
+            this.panel2.Size = new System.Drawing.Size(658, 1);
             this.panel2.TabIndex = 20;
             // 
             // panel1
@@ -411,7 +411,7 @@
             this.panel1.Location = new System.Drawing.Point(27, 1059);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1138, 51);
+            this.panel1.Size = new System.Drawing.Size(1117, 51);
             this.panel1.TabIndex = 21;
             // 
             // button3
