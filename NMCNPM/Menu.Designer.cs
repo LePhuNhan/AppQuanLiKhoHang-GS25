@@ -61,7 +61,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(293, 62);
             this.panel1.TabIndex = 0;
@@ -71,7 +71,7 @@
             this.pictureBox1.BackgroundImage = global::NMCNPM.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(101, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 43);
             this.pictureBox1.TabIndex = 0;
@@ -88,7 +88,7 @@
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.MaximumSize = new System.Drawing.Size(293, 985);
             this.panel2.MinimumSize = new System.Drawing.Size(67, 985);
             this.panel2.Name = "panel2";
@@ -103,7 +103,7 @@
             this.button7.Image = global::NMCNPM.Properties.Resources.cancel;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.Location = new System.Drawing.Point(3, 175);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.button7.Size = new System.Drawing.Size(288, 55);
@@ -121,7 +121,7 @@
             this.button5.Image = global::NMCNPM.Properties.Resources.logout;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(3, 929);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(288, 55);
             this.button5.TabIndex = 8;
@@ -138,7 +138,7 @@
             this.button6.Image = global::NMCNPM.Properties.Resources.order;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(3, 119);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.button6.Size = new System.Drawing.Size(288, 55);
@@ -153,7 +153,7 @@
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.button3);
             this.panel4.Location = new System.Drawing.Point(0, 119);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(293, 0);
             this.panel4.TabIndex = 4;
@@ -165,7 +165,7 @@
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(3, 55);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(288, 55);
             this.button4.TabIndex = 9;
@@ -181,7 +181,7 @@
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(3, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(288, 55);
             this.button3.TabIndex = 8;
@@ -198,7 +198,7 @@
             this.button2.Image = global::NMCNPM.Properties.Resources.statistic_1;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(3, 64);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(288, 55);
             this.button2.TabIndex = 7;
@@ -211,7 +211,7 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Location = new System.Drawing.Point(0, 62);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.MaximumSize = new System.Drawing.Size(293, 2);
             this.panel3.MinimumSize = new System.Drawing.Size(66, 2);
             this.panel3.Name = "panel3";
@@ -223,7 +223,7 @@
             this.button1.BackgroundImage = global::NMCNPM.Properties.Resources.menu;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Location = new System.Drawing.Point(17, 16);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(32, 30);
             this.button1.TabIndex = 3;
@@ -237,7 +237,7 @@
             this.panel5.Controls.Add(this.label1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(293, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1307, 62);
             this.panel5.TabIndex = 4;
@@ -248,7 +248,7 @@
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.pictureBox2);
             this.panel6.Location = new System.Drawing.Point(963, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(344, 62);
             this.panel6.TabIndex = 6;
@@ -260,17 +260,18 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.label2.Location = new System.Drawing.Point(49, 16);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.MinimumSize = new System.Drawing.Size(280, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 29);
+            this.label2.Size = new System.Drawing.Size(280, 30);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Tên quản lý";
+            this.label2.Text = "Tên người quản lý";
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::NMCNPM.Properties.Resources.profile;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(9, 16);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 30);
             this.pictureBox2.TabIndex = 5;
@@ -293,7 +294,7 @@
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(293, 62);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1307, 923);
             this.panel7.TabIndex = 5;
@@ -311,7 +312,7 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Menu";

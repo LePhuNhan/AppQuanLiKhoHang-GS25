@@ -27,11 +27,7 @@ namespace NMCNPM
             InitializeComponent();
             loadListView();
         }
-        public void loadDoanhThu(ListView ListView)
-        {
-            
 
-        }
         private void Form3_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection("Data Source =.\\SQLEXPRESS; Initial Catalog = GS25(1); Integrated Security = True");
@@ -119,6 +115,7 @@ namespace NMCNPM
         private void button1_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
+            
             if (textBox1.Text != "")
             {
                 DoanhThuDAO.Instance.loadSpecificList(listView1, textBox1.Text);
@@ -317,34 +314,49 @@ namespace NMCNPM
             
         }
 
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
+            if (listView1.SelectedItems.Count > 0 )
             {
-                textBox1.Text = listView1.FocusedItem.SubItems[0].Text.ToString();
-                string date = listView1.FocusedItem.SubItems[3].Text.ToString();
-                dateTimePicker1.Value = DateTime.Parse(date);
-                textBox2.Text = 0.ToString();
-                textBox3.Text = 0.ToString();
-                textBox4.Text = 0.ToString();
-                textBox6.Text = 0.ToString();
-                if (listView1.FocusedItem.SubItems[11].Text== "Tiền Mặt")
-                    textBox2.Text = listView1.FocusedItem.SubItems[10].Text.ToString();
+                textBox1.Text = listView1.FocusedItem.SubItems[0].Text;
+                //string date = listView1.FocusedItem.SubItems[3].Text;
+                dateTimePicker1.Value = DateTime.Parse(listView1.FocusedItem.SubItems[3].Text);
+                textBox2.Text = "0";
+                textBox3.Text = "0";
+                textBox4.Text = "0";
+                textBox6.Text = "0";
+
+                if (listView1.FocusedItem.SubItems[11].Text.ToString() == "Tiền Mặt")
+                {
+                    textBox2.Text = listView1.FocusedItem.SubItems[10].Text;
+                }
+
                 if (listView1.FocusedItem.SubItems[11].Text == "BANKING")
-                    textBox3.Text = listView1.FocusedItem.SubItems[10].Text.ToString();
+                {
+                    textBox3.Text = listView1.FocusedItem.SubItems[10].Text;
+                }
+
                 if (listView1.FocusedItem.SubItems[11].Text == "E-CASH")
-                    textBox4.Text = listView1.FocusedItem.SubItems[10].Text.ToString();
-                textBox6.Text = listView1.FocusedItem.SubItems[10].Text.ToString();
+                {
+                    textBox4.Text = listView1.FocusedItem.SubItems[10].Text;
+                }
+
+                textBox6.Text = listView1.FocusedItem.SubItems[10].Text;
             }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void dateTimePicker1_CloseUp(object sender, EventArgs e)
         {
             listView1.Items.Clear();
+            if(textBox1.Text != "")
+            {
+                textBox1.Text = "";
+            }
             if (textBox1.Text == "")
             {
-                string date = dateTimePicker1.Value.ToString();
-                DoanhThuDAO.Instance.loadDatetime(listView1, date);
+                string date1 = dateTimePicker1.Value.ToString();
+                DoanhThuDAO.Instance.loadDatetime(listView1, dateTimePicker1.Value.ToString());
             }
         }
     }
