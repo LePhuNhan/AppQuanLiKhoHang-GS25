@@ -247,10 +247,10 @@
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Location = new System.Drawing.Point(963, 0);
+            this.panel6.Location = new System.Drawing.Point(953, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(344, 62);
+            this.panel6.Size = new System.Drawing.Size(354, 62);
             this.panel6.TabIndex = 6;
             // 
             // label2
@@ -258,13 +258,14 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
-            this.label2.Location = new System.Drawing.Point(49, 16);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.MinimumSize = new System.Drawing.Size(280, 30);
+            this.label2.Location = new System.Drawing.Point(45, 5);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.MinimumSize = new System.Drawing.Size(300, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(280, 30);
+            this.label2.Size = new System.Drawing.Size(300, 50);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tên người quản lý";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox2
             // 

@@ -30,6 +30,7 @@ namespace NMCNPM
         void loadListView()
         {
             listView1.Items.Clear();
+            KhoDAO.Instance.UpdateSoLuongConLai();
             KhoDAO.Instance.loadList(listView1);
             dateTimePicker1.Value = DateTime.Now;
         }
@@ -264,11 +265,12 @@ namespace NMCNPM
         {
             for (int i = 0; i < listView1.Items.Count; i++)
             {
-                KhoDAO.Instance.ThemSoLuongKho(int.Parse(listView1.Items[i].SubItems[4].Text.ToString()),int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
+                KhoDAO.Instance.ThemSoLuongConLai(int.Parse(listView1.Items[i].SubItems[4].Text.ToString()),int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
                 KhoDAO.Instance.XoaDatHang(int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
-                KhoDAO.Instance.GiamSoLuongKho(int.Parse(listView1.Items[i].SubItems[5].Text.ToString()), int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
+                KhoDAO.Instance.GiamSoLuongConLai(int.Parse(listView1.Items[i].SubItems[5].Text.ToString()), int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
                 KhoDAO.Instance.XoaHuyHang(int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
-                KhoDAO.Instance.UpdateSoLuongConLai();
+                KhoDAO.Instance.XoaBanHang(int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
+                KhoDAO.Instance.UpdateSoLuongKho();
             }
             
         }
