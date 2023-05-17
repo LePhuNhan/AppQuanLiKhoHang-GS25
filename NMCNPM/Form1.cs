@@ -127,5 +127,10 @@ namespace NMCNPM
             childForm.BringToFront();
             childForm.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

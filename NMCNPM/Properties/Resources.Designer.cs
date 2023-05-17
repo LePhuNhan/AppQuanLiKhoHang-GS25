@@ -183,6 +183,16 @@ namespace NMCNPM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2023_05_04_082355 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2023-05-04 082355", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap statistic_1 {
             get {
                 object obj = ResourceManager.GetObject("statistic_1", resourceCulture);
