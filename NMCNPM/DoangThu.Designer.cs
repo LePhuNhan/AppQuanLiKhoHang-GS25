@@ -88,7 +88,7 @@
             series1.Name = "Series1";
             series1.YValueMembers = "0";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(991, 369);
+            this.chart1.Size = new System.Drawing.Size(970, 369);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,7 +130,7 @@
             this.listView1.Location = new System.Drawing.Point(27, 652);
             this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(991, 399);
+            this.listView1.Size = new System.Drawing.Size(970, 399);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -246,7 +246,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(615, 477);
+            this.textBox1.Location = new System.Drawing.Point(595, 477);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(233, 26);
@@ -329,7 +329,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(856, 475);
+            this.button1.Location = new System.Drawing.Point(836, 475);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 31);
@@ -345,7 +345,7 @@
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.button2.Image = global::NMCNPM.Properties.Resources.downloadfile;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(898, 412);
+            this.button2.Location = new System.Drawing.Point(877, 412);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 31);
@@ -401,7 +401,7 @@
             this.panel2.Location = new System.Drawing.Point(280, 431);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(532, 1);
+            this.panel2.Size = new System.Drawing.Size(511, 1);
             this.panel2.TabIndex = 20;
             // 
             // panel1
@@ -411,14 +411,14 @@
             this.panel1.Location = new System.Drawing.Point(27, 1059);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(991, 51);
+            this.panel1.Size = new System.Drawing.Size(970, 51);
             this.panel1.TabIndex = 21;
             // 
             // button3
             // 
             this.button3.BackgroundImage = global::NMCNPM.Properties.Resources.refreshing;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(984, 475);
+            this.button3.Location = new System.Drawing.Point(964, 475);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(33, 31);

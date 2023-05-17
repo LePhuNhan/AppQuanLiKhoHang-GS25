@@ -30,6 +30,7 @@ namespace NMCNPM
         void loadListView()
         {
             listView1.Items.Clear();
+            listView2.Items.Clear();
             HuyHangDAO.Instance.loadList(listView1);
             HuyHangDAO.Instance.loadListSanPham(listView2);
             string time = DateTime.Now.ToString();
