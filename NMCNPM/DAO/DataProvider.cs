@@ -20,7 +20,7 @@ namespace NMCNPM_QLKHO.DAO
 
         private DataProvider() { }
         //LAPTOP-G0K1DP8U\KHANHMINHSQL 
-        private string connectionSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog = GS25(1); Integrated Security = True";
+        private string connectionSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog = GS25; Integrated Security = True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

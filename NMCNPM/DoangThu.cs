@@ -29,7 +29,7 @@ namespace NMCNPM
         }
         private void Form3_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source =.\\SQLEXPRESS; Initial Catalog = GS25(1); Integrated Security = True");
+            SqlConnection conn = new SqlConnection("Data Source =.\\SQLEXPRESS; Initial Catalog = GS25; Integrated Security = True");
             SqlDataAdapter ad = new SqlDataAdapter("select ngaythangSold, tongSold from DOANHTHU " +
                 "where DATEDIFF(day,ngaythangSold,getdate())<=7", conn);
             System.Data.DataTable dt = new System.Data.DataTable();
