@@ -139,13 +139,22 @@ namespace NMCNPM
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length <= 5)
+            if (textBox2.Text.Length <= 5 && textBox1.Text == "")
             {
-                DialogResult res = MessageBox.Show("Vui lòng điền đúng mã hàng muốn đặt", "Cảnh báo", MessageBoxButtons.OK);
+                DialogResult res = MessageBox.Show("Vui lòng điền đúng mã hàng và số lượng hàng muốn đặt", "Cảnh báo", MessageBoxButtons.OK);
+                clearInput();
             }
-            if (textBox1.Text == "")
+            else
             {
-                DialogResult result = MessageBox.Show("Vui lòng điền số lượng hàng muốn đặt", "Cảnh báo", MessageBoxButtons.OK);
+                if (textBox2.Text.Length <= 5)
+                {
+                    DialogResult res = MessageBox.Show("Vui lòng điền đúng mã hàng muốn đặt", "Cảnh báo", MessageBoxButtons.OK);
+                    textBox3.Text = "";
+                }
+                if (textBox1.Text == "")
+                {
+                    DialogResult result = MessageBox.Show("Vui lòng điền số lượng hàng muốn đặt", "Cảnh báo", MessageBoxButtons.OK);
+                }
             }
             if (textBox2.Text.Length > 5 && textBox3.Text != "" && textBox1.Text != "")
             {

@@ -207,6 +207,7 @@
             this.textBox3.Location = new System.Drawing.Point(192, 144);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(331, 26);
             this.textBox3.TabIndex = 32;
             // 

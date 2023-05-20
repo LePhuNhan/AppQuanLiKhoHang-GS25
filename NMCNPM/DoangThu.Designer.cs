@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -74,34 +74,34 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart1.BorderlineColor = System.Drawing.Color.Black;
             this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(27, 25);
             this.chart1.Margin = new System.Windows.Forms.Padding(0);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.LegendText = "Doanh thu (VNĐ)";
-            series1.Name = "Series1";
-            series1.YValueMembers = "0";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(970, 369);
+            series3.ChartArea = "ChartArea1";
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.LegendText = "Doanh thu (VNĐ)";
+            series3.Name = "Series1";
+            series3.YValueMembers = "0";
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(1219, 369);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            title1.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(19)))));
-            title1.Name = "Title1";
-            title1.Text = "Doanh thu cửa hàng";
-            title2.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.Name = "Title2";
-            title2.Text = "7 ngày qua";
-            this.chart1.Titles.Add(title1);
-            this.chart1.Titles.Add(title2);
+            title5.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(19)))));
+            title5.Name = "Title1";
+            title5.Text = "Doanh thu cửa hàng";
+            title6.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title6.Name = "Title2";
+            title6.Text = "7 ngày qua";
+            this.chart1.Titles.Add(title5);
+            this.chart1.Titles.Add(title6);
             // 
             // listView1
             // 
@@ -130,7 +130,7 @@
             this.listView1.Location = new System.Drawing.Point(27, 652);
             this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(970, 399);
+            this.listView1.Size = new System.Drawing.Size(1219, 399);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -213,7 +213,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(333, 479);
+            this.label2.Location = new System.Drawing.Point(334, 482);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(191, 20);
@@ -246,7 +246,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(595, 477);
+            this.textBox1.Location = new System.Drawing.Point(559, 479);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(233, 26);
@@ -305,7 +305,7 @@
             this.textBox4.BackColor = System.Drawing.Color.White;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(487, 531);
+            this.textBox4.Location = new System.Drawing.Point(488, 534);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
@@ -317,7 +317,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(332, 530);
+            this.label5.Location = new System.Drawing.Point(333, 533);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(133, 25);
@@ -329,7 +329,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(836, 475);
+            this.button1.Location = new System.Drawing.Point(800, 477);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 31);
@@ -345,7 +345,7 @@
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.button2.Image = global::NMCNPM.Properties.Resources.downloadfile;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(877, 412);
+            this.button2.Location = new System.Drawing.Point(1126, 418);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 31);
@@ -361,7 +361,7 @@
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(19)))));
-            this.textBox6.Location = new System.Drawing.Point(461, 588);
+            this.textBox6.Location = new System.Drawing.Point(462, 591);
             this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
@@ -374,7 +374,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(19)))));
-            this.label7.Location = new System.Drawing.Point(332, 587);
+            this.label7.Location = new System.Drawing.Point(333, 590);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(110, 25);
@@ -398,10 +398,10 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(280, 431);
+            this.panel2.Location = new System.Drawing.Point(291, 431);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(511, 1);
+            this.panel2.Size = new System.Drawing.Size(815, 1);
             this.panel2.TabIndex = 20;
             // 
             // panel1
@@ -411,14 +411,14 @@
             this.panel1.Location = new System.Drawing.Point(27, 1059);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(970, 51);
+            this.panel1.Size = new System.Drawing.Size(1219, 51);
             this.panel1.TabIndex = 21;
             // 
             // button3
             // 
             this.button3.BackgroundImage = global::NMCNPM.Properties.Resources.refreshing;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(964, 475);
+            this.button3.Location = new System.Drawing.Point(928, 477);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(33, 31);

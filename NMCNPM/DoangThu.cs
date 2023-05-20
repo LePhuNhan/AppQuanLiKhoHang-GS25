@@ -47,22 +47,34 @@ namespace NMCNPM
             foreach (ListViewItem item in listView1.Items)
             {
                 int test = int.Parse(textBox2.Text);
-                test += int.Parse(item.SubItems[10].Text.ToString());
-                textBox2.Text = test.ToString();
+                if (item.SubItems[11].Text.ToString()=="Tiền Mặt")
+                {
+                    test += int.Parse(item.SubItems[10].Text.ToString());
+                    textBox2.Text = test.ToString();
+                }
+                
             }
             textBox3.Text = 0.ToString();
             foreach (ListViewItem item in listView1.Items)
             {
                 int test = int.Parse(textBox3.Text);
-                test += int.Parse(item.SubItems[10].Text.ToString());
-                textBox3.Text = test.ToString();
+                if (item.SubItems[11].Text.ToString()=="BANKING")
+                {
+                    test += int.Parse(item.SubItems[10].Text.ToString());
+                    textBox3.Text = test.ToString();
+                }
+                
             }
-            textBox3.Text = 0.ToString();
+            textBox4.Text = 0.ToString();
             foreach (ListViewItem item in listView1.Items)
             {
-                int test = int.Parse(textBox3.Text);
-                test += int.Parse(item.SubItems[10].Text.ToString());
-                textBox3.Text = test.ToString();
+                int test = int.Parse(textBox4.Text);
+                if (item.SubItems[11].Text.ToString() == "E-CASH")
+                {
+                    test += int.Parse(item.SubItems[10].Text.ToString());
+                    textBox4.Text = test.ToString();
+                }
+                
             }
             textBox6.Text = 0.ToString();
             foreach (ListViewItem item in listView1.Items)
@@ -118,6 +130,48 @@ namespace NMCNPM
             if (textBox1.Text != "")
             {
                 DoanhThuDAO.Instance.loadSpecificList(listView1, textBox1.Text);
+                dateTimePicker1.Value = DateTime.Now;
+                textBox2.Text = 0.ToString();
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    int test = int.Parse(textBox2.Text);
+                    if (item.SubItems[11].Text.ToString() == "Tiền Mặt")
+                    {
+                        test += int.Parse(item.SubItems[10].Text.ToString());
+                        textBox2.Text = test.ToString();
+                    }
+
+                }
+                textBox3.Text = 0.ToString();
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    int test = int.Parse(textBox3.Text);
+                    if (item.SubItems[11].Text.ToString() == "BANKING")
+                    {
+                        test += int.Parse(item.SubItems[10].Text.ToString());
+                        textBox3.Text = test.ToString();
+                    }
+
+                }
+                textBox4.Text = 0.ToString();
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    int test = int.Parse(textBox4.Text);
+                    if (item.SubItems[11].Text.ToString() == "E-CASH")
+                    {
+                        test += int.Parse(item.SubItems[10].Text.ToString());
+                        textBox4.Text = test.ToString();
+                    }
+
+                }
+                textBox6.Text = 0.ToString();
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    int test = int.Parse(textBox6.Text);
+                    test += int.Parse(item.SubItems[10].Text.ToString());
+                    textBox6.Text = test.ToString();
+                }
+
             }
             
             else
