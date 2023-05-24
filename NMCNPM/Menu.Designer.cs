@@ -318,6 +318,7 @@
             this.MinimizeBox = false;
             this.Name = "Menu";
             this.Text = "Hệ thống quản lý kho hàng GS25";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

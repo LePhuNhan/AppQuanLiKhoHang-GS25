@@ -34,7 +34,7 @@ namespace NMCNPM
         {
             if (textBox2.Text == "Tên quản lý")
             {
-                textBox2.Text = "201209018";
+                textBox2.Text = "";
                 textBox2.ForeColor = Color.FromArgb(0, 124, 255);
             }
         }
@@ -54,7 +54,7 @@ namespace NMCNPM
             {
                 textBox3.UseSystemPasswordChar = true;
                 button2.BackgroundImage = Properties.Resources.hidden;
-                textBox3.Text = "vanphonggs25";
+                textBox3.Text = "";
                 textBox3.ForeColor = Color.FromArgb(0, 124, 255);
             }
         }

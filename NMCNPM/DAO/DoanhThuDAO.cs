@@ -26,7 +26,7 @@ namespace NMCNPM_QLDOANHTHU.DAO
         {
             string query = "select hdi.hoadonID, nvHo, nvTen, ngaythangSold, " +
                 "gioSold, sp.sanphamID, sanphamName, soluong, gia, chietkhau," +
-                " thanhtien, hinhthucThanhToan\r\n\tfrom dbo.HOADON hd,dbo.NHANVIEN " +
+                " thanhtien, HinhThucThanhToan\r\n\tfrom dbo.HOADON hd,dbo.NHANVIEN " +
                 "nv, dbo.SANPHAM sp, dbo.HDINFO hdi\r\n\t" +
                 "where hdi.hoadonID=hd.hoadonID\r\n\tand " +
                 "hdi.sanphamID=sp.sanphamID\r\n\tand hd.nvID=nv.nvID;";
