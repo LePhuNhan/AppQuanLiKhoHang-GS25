@@ -314,13 +314,13 @@ namespace NMCNPM
 
         private void listView2_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            ItemComparer sorter = listView1.ListViewItemSorter as ItemComparer;
+            ItemComparer sorter = listView2.ListViewItemSorter as ItemComparer;
 
             if (sorter == null)
             {
                 sorter = new ItemComparer(e.Column);
                 sorter.Order = SortOrder.Ascending;
-                listView1.ListViewItemSorter = sorter;
+                listView2.ListViewItemSorter = sorter;
             }
             // if clicked column is already the column that is being sorted
             if (e.Column == sorter.Column)
