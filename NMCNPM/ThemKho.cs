@@ -102,43 +102,79 @@ namespace NMCNPM
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(textBox2.Text.Length <= 5 && textBox1.Text == "")
+            
+            if (textBox2.Text.Length <= 5 && textBox1.Text == "")
             {
                 DialogResult res = MessageBox.Show("Vui lòng điền đúng mã hàng và số lượng hàng muốn đặt", "Cảnh báo", MessageBoxButtons.OK);
                 clearInput();
+                return;
             }
+
             else
             {
                 if (textBox2.Text.Length <= 5)
                 {
                     DialogResult res = MessageBox.Show("Vui lòng điền đúng mã hàng muốn đặt", "Cảnh báo", MessageBoxButtons.OK);
                     textBox3.Text = "";
+                    return;
                 }
                 if (textBox1.Text == "")
                 {
                     DialogResult result = MessageBox.Show("Vui lòng điền số lượng hàng muốn đặt", "Cảnh báo", MessageBoxButtons.OK);
+                    return;
                 }
+                else
+                {
+                    if (Int64.Parse(textBox1.Text) > 1000 || Int64.Parse(textBox1.Text) < 0)
+                    {
+                        DialogResult res = MessageBox.Show("Vui lòng điền số lượng không âm và không lớn hơn 1000", "Cảnh báo", MessageBoxButtons.OK);
+                        return;
+                    }
+                }
+
             }
             
-            if (textBox2.Text.Length>5 && textBox3.Text!="" && textBox1.Text != "")
+            if (textBox2.Text.Length > 5 && textBox3.Text != "" && textBox1.Text != "")
             {
                 DatHangDAO.Instance.DatHang(int.Parse(textBox2.Text), int.Parse(textBox1.Text));
                 textBox1.Clear();
-                
+                clearInput();
                 loadListView();
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length <= 5)
+
+            if (textBox2.Text.Length <= 5 && textBox1.Text == "")
             {
-                DialogResult res = MessageBox.Show("Vui lòng điền đúng mã hàng muốn đổi số lượng", "Cảnh báo", MessageBoxButtons.OK);
+                DialogResult res = MessageBox.Show("Vui lòng chọn hàng và điền số lượng hàng muốn đổi", "Cảnh báo", MessageBoxButtons.OK);
+                clearInput();
+                return;
             }
-            if (textBox1.Text == "")
+            
+            else
             {
-                DialogResult result = MessageBox.Show("Vui lòng điền số lượng hàng muốn đổi", "Cảnh báo", MessageBoxButtons.OK);
+                if (textBox2.Text.Length <= 5)
+                {
+                    DialogResult res = MessageBox.Show("Vui lòng điền đúng mã hàng muốn đổi số lượng", "Cảnh báo", MessageBoxButtons.OK);
+                }
+                if (textBox1.Text == "")
+                {
+                    DialogResult result = MessageBox.Show("Vui lòng điền số lượng hàng muốn đổi", "Cảnh báo", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    if (Int64.Parse(textBox1.Text.ToString()) > 1000 || Int64.Parse(textBox1.Text.ToString()) < 0)
+                    {
+                        DialogResult res = MessageBox.Show("Vui lòng điền số lượng không âm và không lớn hơn 1000", "Cảnh báo", MessageBoxButtons.OK);
+                        return;
+                    }
+                }
+                
+                
             }
+            
             if (textBox2.Text != "" && textBox3.Text != "" && textBox1.Text != "")
             {
                 DatHangDAO.Instance.ChinhSua(int.Parse(textBox1.Text), int.Parse(textBox2.Text));
@@ -338,6 +374,32 @@ namespace NMCNPM
                 sorter.Order = SortOrder.Ascending;
             }
             listView2.Sort();//hienthi
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if(textBox1.Text.Length > 4) {
+                DialogResult res = MessageBox.Show("Vui lòng điền số lượng không âm và không lớn hơn 1000", "Cảnh báo", MessageBoxButtons.OK);
+                textBox1.Text = "";
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Chỉ được nhập số!", "Thông báo - GS25", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Chỉ được nhập số!", "Thông báo - GS25", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

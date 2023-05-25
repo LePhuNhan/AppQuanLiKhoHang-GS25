@@ -275,5 +275,14 @@ namespace NMCNPM
             }
             
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Chỉ được nhập số!", "Thông báo - GS25", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
