@@ -126,7 +126,11 @@ namespace NMCNPM
         private void button1_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
-            
+            if(textBox1.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mã sản phẩm muốn tìm", "Thông báo - GS25", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (textBox1.Text != "")
             {
                 DoanhThuDAO.Instance.loadSpecificList(listView1, textBox1.Text);
