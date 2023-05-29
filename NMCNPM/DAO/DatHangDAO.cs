@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ListView = System.Windows.Forms.ListView;
 
 namespace NMCNPM_QLDATHANG.DAO
 {
@@ -75,7 +76,26 @@ namespace NMCNPM_QLDATHANG.DAO
             
             
         }
+        public void loadSpecificListView(ListView listView, string sreachValue)
+        {
+            string query;
+            DataTable data = new DataTable();
+            query = "select kh.sanphamID,sp.sanphamName,sp.NCC,sanphamBan,sanphamHuy," +
+                "sanphamKho,sanphamConLai\r\n\tfrom dbo.KHO kh, dbo.SANPHAM sp\r\n\t" +
+                "where kh.sanphamID like '%' + @sanphamID + '%'" +
+                " and kh.sanphamID = sp.sanphamID;";
+            data = DataProvider.Instance.ExecuteQuery(query, new object[] { sreachValue });
+            foreach (DataRow row in data.Rows)
+            {
+                ListViewItem item = new ListViewItem(row[0].ToString());
+                for (int i = 1; i < data.Columns.Count; i++)
+                {
+                    item.SubItems.Add(row[i].ToString());
+                }
+                listView.Items.Add(item);
+            }
 
+        }
         public void ThemSoLuongDat(int soluongDat, int sanphamID)
         {
 

@@ -124,6 +124,8 @@ namespace NMCNPM
             if (textBox2.Text != "")
             {
                 HuyHangDAO.Instance.loadSpecificList(textBox3, textBox2.Text);
+                listView2.Items.Clear();
+                HuyHangDAO.Instance.loadSpecificListView(listView2, textBox2.Text);
             }
             else
             {
@@ -159,13 +161,17 @@ namespace NMCNPM
                     DialogResult result = MessageBox.Show("Vui lòng điền số lượng hàng muốn đặt", "Cảnh báo", MessageBoxButtons.OK);
                     return;
                 }
-                else
+                if (Int64.Parse(textBox1.Text) > 1000 || Int64.Parse(textBox1.Text) < 0)
                 {
-                    if (Int64.Parse(textBox1.Text) > 1000 || Int64.Parse(textBox1.Text) < 0)
-                    {
-                        DialogResult res = MessageBox.Show("Vui lòng điền số lượng không âm và không lớn hơn 1000", "Cảnh báo", MessageBoxButtons.OK);
-                        return;
-                    }
+                    DialogResult res = MessageBox.Show("Vui lòng chỉ điền số lượng từ 0 đến 1000", "Cảnh báo", MessageBoxButtons.OK);
+                    return;
+                }
+                if (Int64.Parse(textBox1.Text) == 0)
+                {
+                    HuyHangDAO.Instance.HuyHang(int.Parse(textBox2.Text), int.Parse(textBox1.Text));
+                    textBox1.Clear();
+                    clearInput();
+                    loadListView();
                 }
 
             }
