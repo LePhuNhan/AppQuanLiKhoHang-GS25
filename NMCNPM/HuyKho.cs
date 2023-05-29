@@ -396,6 +396,7 @@ namespace NMCNPM
         {
             for (int i = 0; i < listView1.Items.Count; i++)
             {
+
                 HuyHangDAO.Instance.ThemSoLuongHuy(int.Parse(listView1.Items[i].SubItems[2].Text.ToString()), int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
                 HuyHangDAO.Instance.XoaHuyHang(int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
             }

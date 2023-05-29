@@ -339,6 +339,7 @@ namespace NMCNPM
             for (int i = 0; i < listView1.Items.Count; i++)
             {
                 DatHangDAO.Instance.ThemSoLuongDat(int.Parse(listView1.Items[i].SubItems[2].Text.ToString()), int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
+                
                 DatHangDAO.Instance.XoaDatHang(int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
             }
         }

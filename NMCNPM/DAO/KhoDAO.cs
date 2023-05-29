@@ -65,18 +65,7 @@ namespace NMCNPM_QLKHO.DAO
             }
 
         }
-        public void ThemSoLuongConLai(int soluongDat, int sanphamID)
-        {
 
-            string query = "update KHO set sanphamConLai += CAST( @soluongDat AS bigint)" +
-                " " +
-                "where sanphamID = CAST( @sanphamID AS bigint)";
-            int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { soluongDat, sanphamID });
-            if (data == 0)
-            {
-                MessageBox.Show("Đã xảy ra lỗi khi thêm kho hàng", "WARNING");
-            }
-        }
         public void XoaDatHang(int sanphamID)
         {
 
@@ -87,18 +76,6 @@ namespace NMCNPM_QLKHO.DAO
             if (data == 0)
             {
                 MessageBox.Show("Đã xảy ra lỗi khi thêm kho hàng", "WARNING");
-            }
-        }
-        public void GiamSoLuongConLai(int soluongDat, int sanphamID)
-        {
-
-            string query = "update KHO set sanphamConLai -= CAST( @soluongDat AS bigint)" +
-                " " +
-                "where sanphamID = CAST( @sanphamID AS bigint)";
-            int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { soluongDat, sanphamID });
-            if (data == 0)
-            {
-                MessageBox.Show("Đã xảy ra lỗi khi hủy kho hàng", "WARNING");
             }
         }
         public void XoaHuyHang(int sanphamID)
@@ -128,7 +105,7 @@ namespace NMCNPM_QLKHO.DAO
         public void UpdateSoLuongConLai()
         {
 
-            string query = "update KHO set sanphamConLai= sanphamKho - sanphamBan";
+            string query = "update KHO set sanphamConLai= sanphamKho - sanphamBan + sanphamDat - sanphamHuy";
             int data = DataProvider.Instance.ExecuteNonQuery(query);
             if (data == 0)
             {

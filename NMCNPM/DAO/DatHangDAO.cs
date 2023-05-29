@@ -108,7 +108,7 @@ namespace NMCNPM_QLDATHANG.DAO
                 MessageBox.Show("Đã xảy ra lỗi khi thêm kho hàng", "WARNING");
             }
         }
-        
+
         public void XoaDatHang(int sanphamID)
         {
             string query = "DELETE FROM DATHANG WHERE sanphamID = @sanphamID";

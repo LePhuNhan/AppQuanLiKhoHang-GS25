@@ -17,6 +17,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using NMCNPM_QLDOANHTHU.DAO;
 using NMCNPM_QLDATHANG.DAO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace NMCNPM
 {
@@ -25,16 +26,17 @@ namespace NMCNPM
         public Kho()
         {
             InitializeComponent();
+
             loadListView();
+            
         }
         void loadListView()
         {
             listView1.Items.Clear();
-            KhoDAO.Instance.UpdateSoLuongConLai();
-            KhoDAO.Instance.loadList(listView1);
+            KhoDAO.Instance.UpdateSoLuongConLai();                     
             dateTimePicker1.Value = DateTime.Now;
+            KhoDAO.Instance.loadList(listView1);
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             clearInput();
@@ -266,9 +268,7 @@ namespace NMCNPM
         {
             for (int i = 0; i < listView1.Items.Count; i++)
             {
-                KhoDAO.Instance.ThemSoLuongConLai(int.Parse(listView1.Items[i].SubItems[4].Text.ToString()),int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
                 KhoDAO.Instance.XoaDatHang(int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
-                KhoDAO.Instance.GiamSoLuongConLai(int.Parse(listView1.Items[i].SubItems[5].Text.ToString()), int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
                 KhoDAO.Instance.XoaHuyHang(int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
                 KhoDAO.Instance.XoaBanHang(int.Parse(listView1.Items[i].SubItems[0].Text.ToString()));
                 KhoDAO.Instance.UpdateSoLuongKho();
