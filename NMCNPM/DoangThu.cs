@@ -47,7 +47,7 @@ namespace NMCNPM
             foreach (ListViewItem item in listView1.Items)
             {
                 int test = int.Parse(textBox2.Text);
-                if (item.SubItems[11].Text.ToString()=="Tiền Mặt")
+                if (item.SubItems[11].Text.ToString()=="Tiền mặt")
                 {
                     test += int.Parse(item.SubItems[10].Text.ToString());
                     textBox2.Text = test.ToString();
@@ -139,7 +139,7 @@ namespace NMCNPM
                 foreach (ListViewItem item in listView1.Items)
                 {
                     int test = int.Parse(textBox2.Text);
-                    if (item.SubItems[11].Text.ToString() == "Tiền Mặt")
+                    if (item.SubItems[11].Text.ToString() == "Tiền mặt")
                     {
                         test += int.Parse(item.SubItems[10].Text.ToString());
                         textBox2.Text = test.ToString();
@@ -384,7 +384,7 @@ namespace NMCNPM
                 textBox4.Text = "0";
                 textBox6.Text = "0";
 
-                if (listView1.FocusedItem.SubItems[11].Text.ToString() == "Tiền Mặt")
+                if (listView1.FocusedItem.SubItems[11].Text.ToString() == "Tiền mặt")
                 {
                     textBox2.Text = listView1.FocusedItem.SubItems[10].Text;
                 }
@@ -418,7 +418,7 @@ namespace NMCNPM
                 foreach (ListViewItem item in listView1.Items)
                 {
                     int test = int.Parse(textBox2.Text);
-                    if (item.SubItems[11].Text.ToString() == "Tiền Mặt")
+                    if (item.SubItems[11].Text.ToString() == "Tiền mặt")
                     {
                         test += int.Parse(item.SubItems[10].Text.ToString());
                         textBox2.Text = test.ToString();

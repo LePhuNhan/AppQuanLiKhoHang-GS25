@@ -20,7 +20,7 @@ namespace NMCNPM_QLKHO.DAO
         public bool LoginAccountNVVP(string userName, string passWord)
         {
             string query = "USP_Login_AppQuanLy @userName , @passWord , @typeID";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord, 0 });
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord, 1 });
             return result.Rows.Count == 1;
         }
         public string LoadAccountDisplayname(string userName, string passWord)

@@ -77,7 +77,7 @@ namespace NMCNPM_QLKHO.DAO
             {
                 MessageBox.Show("Đã xảy ra lỗi khi thêm kho hàng", "WARNING");
             }
-        }
+        }   
         public void XoaHuyHang(int sanphamID)
         {
 

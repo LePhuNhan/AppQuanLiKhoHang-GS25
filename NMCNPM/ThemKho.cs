@@ -386,7 +386,7 @@ namespace NMCNPM
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if(textBox1.Text.Length > 4) {
-                DialogResult res = MessageBox.Show("Vui lòng điền số lượng không âm và không lớn hơn 1000", "Cảnh báo", MessageBoxButtons.OK);
+                DialogResult res = MessageBox.Show("Vui lòng điền số lượng không lớn hơn 1000", "Cảnh báo", MessageBoxButtons.OK);
                 textBox1.Text = "";
             }
         }
