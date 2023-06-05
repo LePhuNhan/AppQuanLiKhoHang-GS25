@@ -29,7 +29,7 @@ namespace NMCNPM
             button6.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.FlatAppearance.BorderSize = 0;
-            OpenChildForm(new DoangThu());
+            OpenChildForm(new DoanhThu());
             label2.Text = "label2";
         }
         bool check1 = false;
@@ -83,7 +83,7 @@ namespace NMCNPM
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new DoangThu());
+            OpenChildForm(new DoanhThu());
             label1.Text = "Thống kê doanh thu";
         }
 

@@ -247,11 +247,11 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoangThu.cs">
+    <Compile Include="DoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoangThu.Designer.cs">
-      <DependentUpon>DoangThu.cs</DependentUpon>
+    <Compile Include="DoanhThu.Designer.cs">
+      <DependentUpon>DoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="Kho.cs">
       <SubType>Form</SubType>
@@ -280,8 +280,8 @@
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoangThu.resx">
-      <DependentUpon>DoangThu.cs</DependentUpon>
+    <EmbeddedResource Include="DoanhThu.resx">
+      <DependentUpon>DoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kho.resx">
       <DependentUpon>Kho.cs</DependentUpon>
