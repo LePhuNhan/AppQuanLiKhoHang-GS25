@@ -140,7 +140,6 @@ C:\Users\ADMIN\Documents\GitHub\AppQuanLiKhoHang-GS25\NMCNPM\obj\Debug\QuanLyKho
 C:\Users\ADMIN\Documents\GitHub\AppQuanLiKhoHang-GS25\NMCNPM\obj\Debug\QuanLyKhoHang.csproj.SuggestedBindingRedirects.cache
 C:\Users\ADMIN\Documents\GitHub\AppQuanLiKhoHang-GS25\NMCNPM\obj\Debug\NMCNPM.Form1.resources
 C:\Users\ADMIN\Documents\GitHub\AppQuanLiKhoHang-GS25\NMCNPM\obj\Debug\NMCNPM.Menu.resources
-C:\Users\ADMIN\Documents\GitHub\AppQuanLiKhoHang-GS25\NMCNPM\obj\Debug\NMCNPM.DoangThu.resources
 C:\Users\ADMIN\Documents\GitHub\AppQuanLiKhoHang-GS25\NMCNPM\obj\Debug\NMCNPM.Kho.resources
 C:\Users\ADMIN\Documents\GitHub\AppQuanLiKhoHang-GS25\NMCNPM\obj\Debug\NMCNPM.ThemKho.resources
 C:\Users\ADMIN\Documents\GitHub\AppQuanLiKhoHang-GS25\NMCNPM\obj\Debug\NMCNPM.HuyKho.resources
@@ -253,3 +252,4 @@ C:\Users\plkmi\Source\Repos\AppQuanLiKhoHang\NMCNPM\obj\Debug\QuanLyKhoHang.cspr
 C:\Users\plkmi\Source\Repos\AppQuanLiKhoHang\NMCNPM\obj\Debug\NMCNPM.exe
 C:\Users\plkmi\Source\Repos\AppQuanLiKhoHang\NMCNPM\obj\Debug\NMCNPM.pdb
 C:\Users\plkmi\Source\Repos\AppQuanLiKhoHang\NMCNPM\obj\Debug\NMCNPM.DoanhThu.resources
+C:\Users\ADMIN\Documents\GitHub\AppQuanLiKhoHang-GS25\NMCNPM\obj\Debug\NMCNPM.DoanhThu.resources

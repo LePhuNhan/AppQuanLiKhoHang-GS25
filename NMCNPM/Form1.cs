@@ -32,7 +32,7 @@ namespace NMCNPM
 
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            if (textBox2.Text == "Tên quản lý")
+            if (textBox2.Text == "Mã quản lý")
             {
                 textBox2.Text = "";
                 textBox2.ForeColor = Color.FromArgb(0, 124, 255);
@@ -43,7 +43,7 @@ namespace NMCNPM
         {
             if (textBox2.Text == "")
             {
-                textBox2.Text = "Tên quản lý";
+                textBox2.Text = "Mã quản lý";
                 textBox2.ForeColor = Color.FromArgb(0, 212, 234);
             }
         }
